@@ -1,0 +1,83 @@
+plexus-interactivity-api (1.0-alpha-6-8) unstable; urgency=medium
+
+  * Team upload.
+  * Depend on libplexus-utils2-java instead of libplexus-utils-java
+  * Depend on libplexus-container-default1.5-java
+    instead of libplexus-containers-java
+  * Build with the DH sequencer instead of CDBS
+  * Moved the package to Git
+  * Standards-Version updated to 4.0.0
+  * Switch to debhelper level 10
+  * Updated the Homepage field
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 03 Aug 2017 14:59:03 +0200
+
+plexus-interactivity-api (1.0-alpha-6-7) unstable; urgency=low
+
+  * Team upload.
+  * Install jars in /usr/share/java. (Closes: #687539).
+
+ -- Miguel Landaeta <miguel@miguel.cc>  Thu, 13 Sep 2012 19:13:39 -0430
+
+plexus-interactivity-api (1.0-alpha-6-6) unstable; urgency=low
+
+  * Team upload.
+  * Switch to source format 3.0.
+  * Switch to debhelper level 7.
+  * Remove Paul from Uploaders list and add myself to Uploaders list.
+  * Change Depends: classpath-doc to default-jdk-doc.
+  * Use Maven to build the package.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 28 Aug 2011 21:31:30 +0200
+
+plexus-interactivity-api (1.0-alpha-6-5) unstable; urgency=low
+
+  * Bump Standards-Version to 3.8.3
+  * Compile classes to Java 1.4
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Fri, 04 Sep 2009 17:18:02 +0100
+
+plexus-interactivity-api (1.0-alpha-6-4) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 09 Aug 2009 23:42:07 +0200
+
+plexus-interactivity-api (1.0-alpha-6-3) experimental; urgency=low
+
+  [ Ludovic Claude ]
+  * Change section to java, bump Standards-Version to 3.8.1
+  * Add the Maven POM to the package,
+  * Add a Build-Depends-Indep dependency on maven-repo-helper
+  * Use mh_installpom and mh_installjar to install the POM and the jar to the
+    Maven repository
+  * Update watch file to reflect changes on the site, now use SVN to get the 
+    sources 
+  * Fix Lintian warnings: remove -1 revision to dependencies, move Homepage 
+    tag to top level
+  * Add Vcs-Browser and Vcs-Svn to control
+  * Change the dependency on java-gcj to default-jdk (Closes: #526299)
+
+  [ Michael Koch ]
+  * Added watch file.
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Tue, 24 Mar 2009 15:33:22 +0000
+
+plexus-interactivity-api (1.0-alpha-6-2) unstable; urgency=low
+
+  * Include META-INF/plexus/components.xml in Jar
+
+ -- Paul Cager <paul-debian@home.paulcager.org>  Thu, 19 Jul 2007 23:16:27 +0100
+
+plexus-interactivity-api (1.0-alpha-6-1) unstable; urgency=low
+
+  * Revert to stable release.
+  * Sanitise rules.
+
+ -- Paul Cager <paul-debian@home.paulcager.org>  Fri, 15 Jun 2007 23:05:15 +0100
+
+plexus-interactivity-api (1.0+svn5974-1) unstable; urgency=low
+
+  * Initial release. (Closes: #413525)
+
+ -- Paul Cager <paul-debian@home.paulcager.org>  Sun, 25 Mar 2007 18:27:29 +0100

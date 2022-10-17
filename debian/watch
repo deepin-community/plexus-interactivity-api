@@ -1,0 +1,4 @@
+version=3
+http://svn.codehaus.org/plexus/plexus-components/tags/ \
+  plexus-interactivity-(.*)/ debian debian/orig-tar.sh
+

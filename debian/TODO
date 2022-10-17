@@ -1,0 +1,2 @@
+- the parent project plexus-interactivity including its modules should be
+  packaged instead of the *-api only
