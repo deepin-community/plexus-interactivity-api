@@ -1,3 +1,33 @@
+plexus-interactivity-api (1.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Raising Standards version to 4.6.1:
+    - Using 1.0 format for d/copyright
+    - Rules-Requires-Root: no
+  * Providing version information of all dependencies in the parent POM file
+    (Closes: #1021485)
+  * Using secure URI in d/control
+  * Adding a Lintian override for bad-jar-name
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Pierre Gruet <pgt@debian.org>  Sun, 09 Oct 2022 14:52:32 +0200
+
+plexus-interactivity-api (1.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Removed the patch
+    - Ignore the new plexus-interactivity-jline module
+  * Removed the -java-doc package
+  * Standards-Version updated to 4.6.0.1
+  * Switch to debhelper level 13
+  * Use salsa.debian.org Vcs-* URLs
+  * Track the new releases on GitHub
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 04 May 2022 02:12:02 +0200
+
 plexus-interactivity-api (1.0-alpha-6-8) unstable; urgency=medium
 
   * Team upload.
@@ -51,9 +81,9 @@ plexus-interactivity-api (1.0-alpha-6-3) experimental; urgency=low
   * Add a Build-Depends-Indep dependency on maven-repo-helper
   * Use mh_installpom and mh_installjar to install the POM and the jar to the
     Maven repository
-  * Update watch file to reflect changes on the site, now use SVN to get the 
-    sources 
-  * Fix Lintian warnings: remove -1 revision to dependencies, move Homepage 
+  * Update watch file to reflect changes on the site, now use SVN to get the
+    sources
+  * Fix Lintian warnings: remove -1 revision to dependencies, move Homepage
     tag to top level
   * Add Vcs-Browser and Vcs-Svn to control
   * Change the dependency on java-gcj to default-jdk (Closes: #526299)

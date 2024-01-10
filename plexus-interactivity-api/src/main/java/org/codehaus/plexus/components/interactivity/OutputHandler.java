@@ -24,43 +24,29 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import java.util.List;
 import java.io.IOException;
 
 /**
- * Manage user input from different sources.
+ * Manage user output to different sources.
  *
- * @todo should this also echo any prompts before the input?
- * @todo should this validate the input, reprompt if required?
- * @todo readBoolean, readInt, readSingleChar - readLine's that parse the input
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id: InputHandler.java 2649 2005-10-10 16:51:51Z brett $
+ * @version $Id$
  */
-public interface InputHandler
+public interface OutputHandler
 {
-    String ROLE = InputHandler.class.getName();
+    String ROLE = OutputHandler.class.getName();
 
     /**
-     * Read a single line of input, swalling the newline at the end.
-     * If the input can be echoed, it will be.
-     * @return the line read
+     * Write  a single line of input, excluding the newline at the end.
+     * @param line the line
      */
-    String readLine()
+    void write( String line )
         throws IOException;
 
     /**
-     * Read a single line of input, swalling the newline at the end.
-     * This method guarantees input is not echoed.
-     * @return the line read
+     * Write  a single line of input, including the newline at the end.
+     * @param line the line
      */
-    String readPassword()
-        throws IOException;
-
-    /**
-     * Read a set of lines. Equivalent to multiple calls to {@link #readLine()}.
-     * Ends when an empty line is encountered.
-     * @return a list of lines read
-     */
-    List readMultipleLines()
+    void writeLine( String line )
         throws IOException;
 }

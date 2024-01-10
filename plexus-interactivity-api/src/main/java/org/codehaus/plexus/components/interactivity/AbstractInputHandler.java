@@ -24,45 +24,32 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Disposable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
-import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
+import org.codehaus.plexus.logging.AbstractLogEnabled;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
- * Default output handler, that uses the console.
+ * Base input handler, implements a default <code>readMultipleLines</code>.
  *
  * @author Brett Porter
- * @version $Id: DefaultOutputHandler.java 2648 2005-10-10 16:41:24Z brett $
+ * @version $Id$
  */
-public class DefaultOutputHandler
-    implements Initializable, Disposable, OutputHandler
+public abstract class AbstractInputHandler
+    extends AbstractLogEnabled
+    implements InputHandler
 {
-    private PrintWriter consoleWriter;
-
-    public void initialize()
-        throws InitializationException
-    {
-        consoleWriter = new PrintWriter( System.out );
-    }
-
-    public void dispose()
-    {
-        consoleWriter.close();
-    }
-
-    public void write( String line )
+    public List readMultipleLines()
         throws IOException
     {
-        consoleWriter.print( line );
-        consoleWriter.flush();
-    }
-
-    public void writeLine( String line )
-        throws IOException
-    {
-        consoleWriter.println();
+        List lines = new ArrayList();
+        String line = readLine();
+        while ( line != null && line.length() > 0 )
+        {
+            lines.add( line );
+            line = readLine();
+        }
+        return lines;
     }
 }

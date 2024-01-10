@@ -4,24 +4,21 @@ Priority: optional
 Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
 Uploaders: Torsten Werner <twerner@debian.org>
 Build-Depends:
- debhelper (>= 10),
+ debhelper-compat (= 13),
  default-jdk,
- default-jdk-doc,
- libmaven-javadoc-plugin-java,
  libplexus-container-default1.5-java,
  libplexus-utils2-java,
- libplexus-utils2-java-doc,
  maven-debian-helper (>= 2.2)
-Standards-Version: 4.0.0
-Vcs-Git: https://anonscm.debian.org/git/pkg-java/plexus-interactivity-api.git
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/plexus-interactivity-api.git
-Homepage: http://codehaus-plexus.github.io/plexus-interactivity/
+Standards-Version: 4.6.1
+Vcs-Git: https://salsa.debian.org/java-team/plexus-interactivity-api.git
+Vcs-Browser: https://salsa.debian.org/java-team/plexus-interactivity-api
+Homepage: https://codehaus-plexus.github.io/plexus-interactivity/
+Rules-Requires-Root: no
 
 Package: libplexus-interactivity-api-java
 Architecture: all
 Depends: ${maven:Depends}, ${misc:Depends}
 Recommends: ${maven:OptionalDepends}
-Suggests: libplexus-interactivity-api-java-doc
 Description: interactivity API for the Plexus framework
  The Plexus project provides a full software stack for creating and executing
  software projects. Based on the Plexus container, the applications can
@@ -40,30 +37,3 @@ Description: interactivity API for the Plexus framework
      * Component dependencies, and
      * Various dependency injection techniques including constructor injection,
        setter injection, and private field injection.
-
-Package: libplexus-interactivity-api-java-doc
-Architecture: all
-Section: doc
-Depends: ${maven:DocDepends}, ${misc:Depends}
-Recommends: ${maven:DocOptionalDepends}
-Suggests: libplexus-interactivity-api-java
-Description: API Documentation for plexus-interactivity-api
- The Plexus project provides a full software stack for creating and executing
- software projects. Based on the Plexus container, the applications can
- utilise component-oriented programming to build modular, reusable components
- that can easily be assembled and reused.
- .
- While Plexus is similar to other inversion-of-control (IoC) or dependency
- injection frameworks such as the Spring Framework, it is a full-fledged
- container that supports many more features such as:
- .
-     * Component lifecycles
-     * Component instantiation strategies
-     * Nested containers
-     * Component configuration
-     * Auto-wiring
-     * Component dependencies, and
-     * Various dependency injection techniques including constructor injection,
-       setter injection, and private field injection.
- .
- This package contains the API documentation for plexus-interactivity-api.

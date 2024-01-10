@@ -24,29 +24,40 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
+import org.codehaus.plexus.personality.plexus.lifecycle.phase.Disposable;
+import org.codehaus.plexus.personality.plexus.lifecycle.phase.Initializable;
+import org.codehaus.plexus.personality.plexus.lifecycle.phase.InitializationException;
+
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- * Manage user output to different sources.
+ * Default output handler, that uses the console.
  *
- * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id: OutputHandler.java 2649 2005-10-10 16:51:51Z brett $
+ * @author Brett Porter
+ * @version $Id$
  */
-public interface OutputHandler
+public class DefaultOutputHandler
+    implements Initializable, OutputHandler
 {
-    String ROLE = OutputHandler.class.getName();
+    private PrintWriter consoleWriter;
 
-    /**
-     * Write  a single line of input, excluding the newline at the end.
-     * @param line the line
-     */
-    void write( String line )
-        throws IOException;
+    public void initialize()
+        throws InitializationException
+    {
+        consoleWriter = new PrintWriter( System.out );
+    }
 
-    /**
-     * Write  a single line of input, including the newline at the end.
-     * @param line the line
-     */
-    void writeLine( String line )
-        throws IOException;
+    public void write( String line )
+        throws IOException
+    {
+        consoleWriter.print( line );
+        consoleWriter.flush();
+    }
+
+    public void writeLine( String line )
+        throws IOException
+    {
+        consoleWriter.println();
+    }
 }
