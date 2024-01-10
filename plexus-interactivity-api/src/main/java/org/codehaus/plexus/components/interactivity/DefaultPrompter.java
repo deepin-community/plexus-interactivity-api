@@ -34,7 +34,7 @@ import java.util.List;
  * Default prompter.
  *
  * @author Brett Porter
- * @version $Id: DefaultPrompter.java 2649 2005-10-10 16:51:51Z brett $
+ * @version $Id$
  */
 public class DefaultPrompter
     implements Prompter
@@ -121,6 +121,9 @@ public class DefaultPrompter
             try
             {
                 line = inputHandler.readLine();
+                if (line == null && defaultReply == null) {
+                    throw new IOException("EOF");
+                }
             }
             catch ( IOException e )
             {

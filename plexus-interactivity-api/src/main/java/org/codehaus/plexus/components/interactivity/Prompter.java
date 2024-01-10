@@ -24,22 +24,33 @@ package org.codehaus.plexus.components.interactivity;
  * SOFTWARE.
  */
 
+import java.util.List;
+
 /**
- * Error while prompting.
+ * Prompt the user for input.
  *
  * @author <a href="mailto:brett@apache.org">Brett Porter</a>
- * @version $Id: PrompterException.java 2649 2005-10-10 16:51:51Z brett $
+ * @version $Id$
  */
-public class PrompterException
-    extends Exception
+public interface Prompter
 {
-    public PrompterException( String message )
-    {
-        super( message );
-    }
+    String ROLE = Prompter.class.getName();
 
-    public PrompterException( String message, Throwable cause )
-    {
-        super( message, cause );
-    }
+    String prompt( String message )
+        throws PrompterException;
+
+    String prompt( String message, String defaultReply )
+        throws PrompterException;
+
+    String prompt( String message, List possibleValues )
+        throws PrompterException;
+
+    String prompt( String message, List possibleValues, String defaultReply )
+        throws PrompterException;
+
+    String promptForPassword( String message )
+        throws PrompterException;
+
+    void showMessage( String message )
+        throws PrompterException;
 }

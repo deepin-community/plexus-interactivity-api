@@ -1,0 +1,3 @@
+# The indicated file is the real jar and not a symlink, but this really does
+# not harm.
+bad-jar-name [usr/share/java/plexus-interactivity-api.jar]
