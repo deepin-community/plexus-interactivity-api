@@ -1,0 +1,29 @@
+Description: specifying the versions of dependencies in the
+ dependencyManagement section of the parent POM. Otherwise no version number
+ whill be shipped in the binary package for these dependencies.
+Author: Pierre Gruet <pgt@debian.org>
+Bug-Debian: https://bugs.debian.org/1021485
+Forwarded: https://github.com/codehaus-plexus/plexus-interactivity/issues/34
+Last-Update: 2022-10-09
+
+--- a/pom.xml
++++ b/pom.xml
+@@ -52,4 +52,18 @@
+     </plugins>
+   </build>
+ 
++  <dependencyManagement>
++    <dependencies>
++      <dependency>
++        <groupId>org.codehaus.plexus</groupId>
++        <artifactId>plexus-utils</artifactId>
++        <version>3.3.1</version>
++      </dependency>
++      <dependency>
++        <groupId>org.codehaus.plexus</groupId>
++        <artifactId>plexus-container-default</artifactId>
++        <version>2.1.1</version>
++      </dependency>
++    </dependencies>
++  </dependencyManagement>
+ </project>
